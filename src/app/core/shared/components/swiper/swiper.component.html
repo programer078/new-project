@@ -1,7 +1,7 @@
 <body>
 <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper"
 thumbs-swiper=".mySwiper2" space-between="10" navigation="true">
-@for (item of swiper; track $index) {
+@for (item of swiper(); track $index) {
   <swiper-slide>
     <app-img1 [imgPath]="item.img"></app-img1> 
   </swiper-slide>
@@ -10,7 +10,7 @@ thumbs-swiper=".mySwiper2" space-between="10" navigation="true">
 
 <swiper-container class="mySwiper2" space-between="10" slides-per-view="4" free-mode="true"
 watch-slides-progress="true">
-@for (item of swiper; track $index) {
+@for (item of swiper(); track $index) {
   <swiper-slide>
     <app-img1 [imgPath]="item.img"></app-img1> 
   </swiper-slide>

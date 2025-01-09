@@ -2,6 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, signal, WritableSignal } fro
 import { Img1Component } from "../img1/img1.component";
 import { ImageItem } from 'src/app/core/Interfaces/image-item.interface';
 import Swiper from 'swiper';
+import { dumy } from 'src/app/core/constant/constants';
 @Component({
   selector: 'app-swiper',
   standalone: true,
@@ -11,15 +12,9 @@ import Swiper from 'swiper';
   imports: [Img1Component],
 })
 export class SwiperComponent implements OnInit {
+  public swiper = signal(dumy.Const);
   public mainSwiper: WritableSignal<Swiper | null> = signal(null);
   public thumbsSwiper: WritableSignal<Swiper | null> = signal(null);
-  public swiper: ImageItem[] = [
-    { img: 'assets/imgs/nature-1.jpg' },
-    { img: 'assets/imgs/nature-2.jpg' },
-    { img: 'assets/imgs/nature-3.jpg' },
-    { img: 'assets/imgs/nature-4.jpg' },
-    { img: 'assets/imgs/nature-5.jpg' }
-  ];
   public ngOnInit(): void {
     setTimeout(() => {
       this.initializeSwipers();
