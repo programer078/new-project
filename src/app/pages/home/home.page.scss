@@ -1,0 +1,93 @@
+home css 
+
+
+
+.report-container {
+  padding: 20px;
+  background: #f8f9fa;
+  
+  .report-header {
+    margin-bottom: 20px;
+    
+    h2 {
+      color: #333;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+}
+
+.report-table {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border: 1px solid #dee2e6;
+    }
+    
+    th {
+      background-color: #f8f9fa;
+      font-weight: 500;
+      color: #495057;
+      border-bottom: 2px solid #dee2e6;
+    }
+    
+    td {
+      color: #212529;
+    }
+    
+    tbody tr {
+      &:nth-child(even) {
+        background-color: #f8f9fa;
+      }
+      
+      &:hover {
+        background-color: #f2f2f2;
+      }
+    }
+    
+    tfoot {
+      tr {
+        background-color: #f8f9fa;
+        font-weight: 500;
+        
+        td {
+          border-top: 2px solid #dee2e6;
+        }
+      }
+    }
+  }
+}
+
+
+.report-table::-webkit-scrollbar {
+  height: 6px;
+}
+
+.report-table::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.report-table::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.report-table::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.upload-button {
+  margin: 20px;
+}

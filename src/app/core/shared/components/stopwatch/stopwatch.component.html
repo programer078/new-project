@@ -1,0 +1,95 @@
+<ion-content>
+  <ion-segment [(ngModel)]="selectedSegment" (ionChange)="segmentChanged($event)" mode="ios">
+    <ion-segment-button value="stopwatch">
+      <ion-label>Stopwatch</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="timer">
+      <ion-label>Timer</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  @if(selectedSegment === 'stopwatch') {
+    <ion-list  class="ion-padding">
+      <ion-card class="watch-card">
+        <ion-card-content>
+          <div class="watch-face">
+            <div class="outer-circle">
+              <div class="numbers">
+                <span *ngFor="let number of dialNumbers" [style.transform]="'rotate(' + (number * 30) + 'deg)'"
+                  class="number">
+                  <span [style.transform]="'rotate(' + (-number * 30) + 'deg)'">{{number * 5}}</span>
+                </span>
+              </div>
+              <div class="hands">
+                <div class="hand minute" [style.transform]="'rotate(' + getMinuteRotation() + 'deg)'"></div>
+                <div class="hand second" [style.transform]="'rotate(' + getSecondRotation() + 'deg)'"></div>
+                <div class="center-point"></div>
+              </div>
+            </div>
+          </div>
+          <div class="digital-display">
+            <span class="minutes">{{formatNumber(minutes)}}</span>
+            <span class="colon">:</span>
+            <span class="seconds">{{formatNumber(seconds)}}</span>
+            <span class="milliseconds">.{{formatNumber(milliseconds, 3).substring(0, 2)}}</span>
+          </div>
+          <div class="button-container">
+            <ion-button expand="block" (click)="toggleTimerOrStopwatch(true)" 
+              [color]="isRunning ? 'danger' : 'primary'" class="control-button">
+              {{isRunning ? 'Stop' : 'Start'}}
+            </ion-button>
+            <ion-button expand="block" (click)="resetStopwatch()" 
+              color="medium" class="control-button">
+              Reset
+            </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  }
+ 
+  @if(selectedSegment === 'timer') {
+  <ion-list  class="ion-padding">
+    <ion-card class="watch-card">
+      <ion-card-content>
+        <div class="watch-face">
+          <div class="outer-circle">
+            <div class="numbers">
+              <span *ngFor="let number of dialNumbers" [style.transform]="'rotate(' + (number * 30) + 'deg)'"
+                class="number">
+                <span [style.transform]="'rotate(' + (-number * 30) + 'deg)'">{{number * 5}}</span>
+              </span>
+            </div>
+            <div class="hands">
+              <div class="hand minute" [style.transform]="'rotate(' + getTimerMinuteRotation() + 'deg)'"></div>
+              <div class="hand second" [style.transform]="'rotate(' + getTimerSecondRotation() + 'deg)'"></div>
+              <div class="center-point"></div>
+            </div>
+          </div>
+        </div>
+        <div class="digital-display">
+          <span class="minutes">{{formatNumber(timerMinutes)}}</span>
+          <span class="colon">:</span>
+          <span class="seconds">{{formatNumber(timerSeconds)}}</span>
+          <span class="milliseconds">.{{formatNumber(timerMilliseconds, 3).substring(0, 2)}}</span>
+        </div>
+        <div class="input-container" *ngIf="!isRunning">
+          <ion-item>
+            <ion-label position="floating">Enter Minutes</ion-label>
+            <ion-input type="number" [(ngModel)]="inputMinutes" min="0"></ion-input>
+          </ion-item>
+        </div>
+        <div class="button-container">
+          <ion-button *ngIf="!isRunning" expand="block" (click)="toggleTimerOrStopwatch(false)" color="primary">
+            Start Timer
+          </ion-button>
+          <ion-button *ngIf="isRunning" expand="block" (click)="toggleTimerOrStopwatch(false)" color="danger">
+            Stop Timer
+
+          </ion-button>
+          <ion-button expand="block" (click)="resetTimer()" color="medium">Reset</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+}
+</ion-content>
