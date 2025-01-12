@@ -1,0 +1,42 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <h2>User Registration Form</h2>
+  <div class="form-section" formGroupName="personalDetails">
+    <div class="form-row">
+      <app-input-field label="First Name*" [control]="firstNameControl"></app-input-field>
+      <app-input-field label="Last Name*" [control]="lastNameControl"></app-input-field>
+    </div>
+    <div class="form-row">
+      <app-input-field label="Email*" [control]="emailControl"></app-input-field>
+      <app-input-field label="Phone*" [control]="phoneControl"></app-input-field>
+    </div>
+    <div class="form-row">
+      <app-input-field label="Date of Birth*" [control]="dateOfBirthControl" type="date"></app-input-field>
+      <app-input-field label="Gender*" [control]="genderControl">
+   
+      </app-input-field>
+    </div>
+  </div>
+
+  <div class="form-section" formGroupName="address">
+    <app-input-field label="Street Address*" [control]="streetControl" type="textarea"></app-input-field>
+    <div class="form-row">
+      <app-input-field label="City*" [control]="cityControl"></app-input-field>
+      <app-input-field label="State*" [control]="stateControl"></app-input-field>
+      <app-input-field label="Pincode*" [control]="pincodeControl"></app-input-field>
+    </div>
+  </div>
+
+  <div class="form-section" formGroupName="professionalDetails">
+    <div class="form-row">
+      <app-input-field label="Education*" [control]="educationControl">
+       
+      </app-input-field>
+      <app-input-field label="Experience (Years)*" [control]="experienceControl" type="number"></app-input-field>
+    </div>
+  </div>
+
+  <div class="form-buttons">
+    <button type="submit" [disabled]="userForm.invalid">Submit</button>
+    <button type="button" (click)="resetForm()">Reset</button>
+  </div>
+</form>

@@ -1,6 +1,23 @@
-<body>
 <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper"
-thumbs-swiper=".mySwiper2" space-between="10" navigation="true">
+thumbs-swiper=".mySwiper2" space-between="10" navigation="true"
+
+[breakpoints]="
+  {
+    '360':{
+      'slidesPerView': 1,
+      'spaceBetween': 10,
+    },
+    '760':{
+      'slidesPerView':2,
+      'spaceBetween': 10,
+    },
+    '1101':{
+      'slidesPerView': 4,
+      'spaceBetween': 40,
+    }
+  }
+  "
+>
 @for (item of swiper(); track $index) {
   <swiper-slide>
     <app-img1 [imgPath]="item.img"></app-img1> 

@@ -1,0 +1,164 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Form Container */
+form {
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin-inline: auto;
+    max-width: 1000px;
+    transition: all 0.3s ease;
+}
+
+form:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading Style */
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #444;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Form Section Styling */
+.form-section {
+    margin-bottom: 25px;
+}
+
+/* Form Row Styling */
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* App Input Field Styling */
+app-input-field {
+    position: relative;
+    display: block;
+    flex: 1;
+    min-width: 230px;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+app-input-field input,
+app-input-field select,
+app-input-field textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+app-input-field input:focus,
+app-input-field select:focus,
+app-input-field textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+app-input-field textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+/* Label Styling */
+app-input-field label {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background-color: #fff;
+    padding: 0 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+app-input-field input:placeholder-shown + label,
+app-input-field select:placeholder-shown + label,
+app-input-field textarea:placeholder-shown + label {
+    top: 12px;
+    left: 15px;
+    font-size: 16px;
+    color: #aaa;
+}
+
+/* Hover Effect */
+app-input-field input:hover,
+app-input-field select:hover,
+app-input-field textarea:hover {
+    border-color: #007bff;
+}
+
+/* Dropdown Styling */
+app-input-field select {
+    appearance: none;
+    background: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%2224%22 height%3D%2224%22 viewBox%3D%220 0 24 24%22 fill%3D%22none%22 stroke%3D%22%23666%22 stroke-width%3D%222%22 stroke-linecap%3D%22round%22 stroke-linejoin%3D%22round%22%3E%3Cpolyline points%3D%226 9 12 15 18 9%22/%3E%3C/svg%3E') no-repeat right 15px center;
+    background-size: 14px 14px;
+}
+
+/* Button Styling */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button[type="button"] {
+    background-color: #6c757d;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button[type="button"]:hover:not(:disabled) {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(1px);
+}

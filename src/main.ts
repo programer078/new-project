@@ -9,7 +9,7 @@ import { register } from 'swiper/element/bundle';
 register();
 
 import { AppComponent } from './app/app.component';addIcons({
-'clipboard':clipboard,
+
 })
 bootstrapApplication(AppComponent, {
   providers: [

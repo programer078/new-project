@@ -1,6 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, signal, WritableSignal } from '@angular/core';
 import { Img1Component } from "../img1/img1.component";
-import { ImageItem } from 'src/app/core/Interfaces/image-item.interface';
 import Swiper from 'swiper';
 import { dumy } from 'src/app/core/constant/constants';
 @Component({
